@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonkeeper Battery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            background-color: #232e40;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #194471;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            height: 5%;
+            top: 0;
+            z-index: 1000;
+            border-radius: 0 0 50% 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+            margin-top: -75px;
+        }
+        li {
+            transition: all ease-in-out 0.3s;
+        }
+        li:hover {
+            transform: translateY(-5px);
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 100px 20px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        #home {
+            background: #232e40;
+            color: #fff;
+        }
+
+        #gasless {
+            background: #232e40;
+            color: #fff;
+        }
+
+        #nft {
+            background: #232e40;
+            color: #fff;
+        }
+
+        #purchase {
+            background: #232e40;
+            color: #fff;
+        }
+
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tonLogo {
+            position: relative;
+            width: 8%;
+            left: 5%;
+            top: -15px;
+            padding: -20;
+            filter:drop-shadow(3px 3px 8px black);
+            transition: all ease-in-out 0.2s;
+        }
+        .tonLogo:hover {
+            transform: scale(1.1);
+        }
+
+        .homeTitle {
+            position: relative;
+            font-size: 45px;
+            top: 60px;
+            left: -15%;
+        }
+
+        #imagebatt {
+            position: relative;
+            width: 70%;
+            top: -235px;
+            left: 107%;
+        }
+        /* Gasless Payment Part */
+        .gasTitle {
+            position: relative;
+            left: 25%;
+            top: 165px;
+            font-size: 25px;
+        }
+        .gasCard {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            top: -370px;
+            left: -72%;
+        }
+        /* NFT Transfer Part */
+        .nftTitle {
+            position: relative;
+            left: -20%;
+            top: 115px;
+            font-size: 25px;
+        }
+        .nftCard {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            top: -320px;
+            left: 85%;
+        }
+        /* In-App Purchase Part */
+        .purchaseTitle {
+            position: relative;
+            left: 20%;
+            top: 135px;
+            font-size: 25px;
+        }
+        .purchaseCard {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            top: -335px;
+            left: -90%;
+        }
+
+        .footer {
+            background-color: #194471;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: static;
+            bottom: 0;
+            width: 100%;
+            height: 190px;
+            border-radius: 20% 20% 0 0;
+        }
+
+        .typing-animation {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid black;
+            animation: typing 6s steps(40, end) infinite, blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            0% { width: 0; }
+            45% { width: 100%; }
+            55% { width: 100%; }
+            100% { width: 0; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }
+    </style>
+
+</head>
+<body>
+    <header id="header">     
+        <a href="#home"><img class="tonLogo" src="images/tonkeeperLOGO.png"></a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>        
+                <li><a href="#gasless">Gasless Payments</a></li>
+                <li><a href="#nft">NFT Transfer</a></li>
+                <li><a href="#purchase">In-App Purchase</a></li>
+                <li><a href="#summary">Summary</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="homeTitle">
+            <h1>TONKEEPER BATTERY</h1>
+            <p class="typing-animation">Powering Your Crypto, Anywhere, Anytime</p>
+        </div>
+        <div class="imageContainer">
+            <img src="images/batteryNoBG.png" id="imagebatt">
+        </div>
+    </section>
+    
+    <section id="gasless" class="section">
+        <div class="gasTitle">
+            <h2>Gasless Payments and Swaps</h2>
+            <p style="font-size: 18px;">Gasless payments and swaps allow users to conduct<br>
+                transactions (such as sending tokens or swapping<br>
+                between different cryptocurrencies) without having<br>
+                to pay the network fees (known as gas fees) usually<br>
+                required for these transactions. Instead, these fees<br>
+                can be subsidized by the platform, covered by a<br> 
+                third party, or deducted in a different way that<br>
+                doesn’t require the user to hold the native token<br>
+                for gas fees.</p>
+            <p style="font-size: 18px;">Key Use Cases:<br><br>
+                1. <b>User Experience Improvement:</b><br>Lowering the barrier for entry,especially for new users<br>unfamiliar with gas fees or those without the native token required for fees.<br>
+                2. <b>Microtransactions:</b><br>Enabling small transactions that wouldn't be feasible if gas fees<br>were high, such as tipping, paying for digital goods, or in-app purchases.<br>
+                3. <b>Adoption in DApps:</b><br>Making decentralized applications (DApps) more accessible and user-friendly<br>by removing the need for users to manage gas fees.<br>
+                4. <b>Cross-Token Transactions:</b><br>Facilitating transactions between differenttokens without<br>the hassle of converting to the native gas token.</p>
+        </div>
+        <div>
+            <img src="images/gaslesspaymentNOBG.png"  class="gasCard">
+        </div>
+    </section>
+    
+    <section id="nft" class="section">
+        <div class="nftTitle">
+            <h2>NFT Transfer</h2>
+            <p style="font-size: 18px;">Gasless NFT transfers enable users to send non-fungible tokens<br>
+                (NFTs) without paying gas fees. This is particularly useful in<br>
+                gaming, digital art, and collectible markets where NFTs are prevalent.</p>
+            <p style="font-size: 18px;">Key Use Cases:<br><br>
+                1. <b>Gaming:</b><br>Players can trade, sell, or transfer<br>in-game assets without worrying about gas fees.<br><br>
+                2. <b>Digital Art and Collectibles:</b><br>Artists and collectors<br>
+                can transfer NFTs as gifts, sales, or trades without the<br>extra cost,encouraging more transactions and engagement.<br><br>
+                3. <b>Marketplace Efficiency:</b><br>NFT marketplaces can offer a more seamless experience,<br>attracting more users and transactions.</p>
+        </div>
+        <div>
+            <img src="images/nfttransfer.png" class="nftCard">
+        </div>
+    </section>
+    
+    <section id="purchase" class="section">
+        <div class="purchaseTitle">
+            <h2>Funding with In-App Purchases or Crypto</h2>
+            <p style="font-size: 18px;">This feature allows users to fund their accounts or wallets using<br>
+                either traditional in-app purchases (likely via fiat currency) or<br>
+                cryptocurrencies. This dual approach provides flexibility and<br>
+                convenience for users.</p>
+            <p style="font-size: 18px;">Key Use Cases:<br><br>
+                1. Hybrid Funding Models:<br>Users can choose to fund their accounts with fiat<br>(via in-app purchases) or crypto, catering to a wider audience with different preferences.<br>
+                2. Onboarding Non-Crypto Users:<br>Easier for users who are not familiar with<br>crypto to get started by allowing them to fund their accounts with traditional payment methods.<br>
+                3. Flexibility:<br>Users can seamlessly switch between fiat and crypto funding<br>based on convenience or market conditions.<br>
+                4. Enhanced User Adoption:<br>Simplifies the process for users to participate in<br>blockchain-based applications, driving broader adoption.</p>
+        </div>
+        <div>
+            <img src="images/purchaseNOBG.png"  class="purchaseCard">
+        </div>
+    </section>
+    
+    <footer id="summary" class="footer">
+        <h2>Summary</h2>
+        <p>The primary advantage of gasless transactions is the removal of a significant<br>
+            friction point in blockchain usage. By covering or subsidizing gas fees, platforms<br>
+            can improve user experience, facilitate microtransactions, and drive greater adoption<br>
+            of decentralized technologies. This, combined with the flexibility of funding options,<br>
+            makes blockchain applications more accessible and attractive to a broader audience.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
