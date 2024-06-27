@@ -58,6 +58,7 @@
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            scroll-behavior: smooth;
         }
 
         #home {
@@ -185,21 +186,27 @@
 
         /* Media Queries for Responsiveness of the Website */
         @media (max-width: 1200px) {
+            .header {
+                position: fixed;
+                border-radius: 0 0 10% 0;
+            }
+            
             .tonLogo {
-                width: 10%;
+                width: 9%;
                 left: 2%;
             }
 
             .homeTitle {
-                font-size: 40px;
-                left: -10%;
-                text-align: center;
+                font-size: 35px;
+                left: -15%;
+                top: -10px;
+                text-align: left;
             }
 
             #imagebatt {
-                width: 60%;
+                width: 50%;
                 top: -200px;
-                left: 80%;
+                left: 75%;
             }
 
             .gasTitle, .nftTitle, .purchaseTitle {
