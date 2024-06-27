@@ -36,6 +36,7 @@
             margin: 0 1rem;
             margin-top: -75px;
         }
+
         li {
             transition: all ease-in-out 0.3s;
         }
@@ -197,44 +198,53 @@
             }
 
             .homeTitle {
-                font-size: 35px;
+                font-size: 38px;
                 left: -15%;
-                top: -10px;
+                top: 15px;
                 text-align: left;
             }
 
             #imagebatt {
-                width: 50%;
-                top: -200px;
-                left: 75%;
+                width: 60%;
+                top: -218px;
+                left: 90%;
             }
 
-            .gasTitle, .nftTitle, .purchaseTitle {
-                font-size: 22px;
+            .gasTitle {
+                font-size: 12px;
+            }
+            .nftTitle {
+                font-size: 12px;
+                left: -17%;
+            }
+            .purchaseTitle {
+                font-size: 12px;
+                left: 23%;
             }
 
             .gasCard {
-                height: 400px;
+                width: 100%;
+                height: 350px;
                 top: -300px;
-                left: -60%;
+                left: -90%;
             }
 
             .nftCard {
                 height: 350px;
                 top: -280px;
-                left: 70%;
+                left: 90%;
             }
 
             .purchaseCard {
                 height: 400px;
                 top: -300px;
-                left: -80%;
+                left: -65%;
             }
         }
 
         @media (max-width: 768px) {
             .tonLogo {
-                width: 15%;
+                width: 10%;
                 left: 1%;
                 top: 0;
             }
@@ -270,32 +280,76 @@
 
         @media (max-width: 480px) {
             .tonLogo {
-                width: 20%;
-                left: 1%;
-                top: 0;
+                position: fixed;
+                width: 30%;
+                left: 68%;
+                top: 840px;
             }
 
             .homeTitle {
-                font-size: 25px;
+                position: relative;
+                font-size: 15px;
                 left: 0;
-                top: 10px;
+                top: 50px;
                 text-align: center;
             }
 
             #imagebatt {
-                width: 90%;
-                top: -150px;
+                position: relative;
+                width: 60%;
+                top: -320px;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
-            .gasTitle, .nftTitle, .purchaseTitle {
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                padding: 0;
+            }
+
+            nav ul li {
+                font-size: 12px;
+                margin: 0 5px;
+                margin-top: -1px;
+            }
+
+            .gasTitle {
+                font-size: 15px;
+                left: 0;
+                text-align: center;
+            }
+            #gasP1, #gasP2 {
+                font-size: 7px;
+            }
+
+            .nftTitle {
+                font-size: 18px;
+                left: 0;
+                text-align: center;
+            }
+            .purchaseTitle {
                 font-size: 18px;
                 left: 0;
                 text-align: center;
             }
 
-            .gasCard, .nftCard, .purchaseCard {
+            .gasCard {
+                width: 95%;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -100px;
+                height: auto;
+            }
+            .nftCard {
+                width: 95%;
+                left: 50%;
+                transform: translateX(-50%);
+                top: -100px;
+                height: auto;
+            }
+            .purchaseCard {
                 width: 95%;
                 left: 50%;
                 transform: translateX(-50%);
@@ -333,7 +387,7 @@
     <section id="gasless" class="section">
         <div class="gasTitle">
             <h2>Gasless Payments and Swaps</h2>
-            <p style="font-size: 18px;">Gasless payments and swaps allow users to conduct<br>
+            <p style="font-size: 18px;" id="gasP1">Gasless payments and swaps allow users to conduct<br>
                 transactions (such as sending tokens or swapping<br>
                 between different cryptocurrencies) without having<br>
                 to pay the network fees (known as gas fees) usually<br>
@@ -342,7 +396,7 @@
                 third party, or deducted in a different way that<br>
                 doesn’t require the user to hold the native token<br>
                 for gas fees.</p>
-            <p style="font-size: 18px;">Key Use Cases:<br><br>
+            <p style="font-size: 18px;" id="gasP2">Key Use Cases:<br><br>
                 1. <b>User Experience Improvement:</b><br>Lowering the barrier for entry,especially for new users<br>unfamiliar with gas fees or those without the native token required for fees.<br>
                 2. <b>Microtransactions:</b><br>Enabling small transactions that wouldn't be feasible if gas fees<br>were high, such as tipping, paying for digital goods, or in-app purchases.<br>
                 3. <b>Adoption in DApps:</b><br>Making decentralized applications (DApps) more accessible and user-friendly<br>by removing the need for users to manage gas fees.<br>
@@ -356,10 +410,10 @@
     <section id="nft" class="section">
         <div class="nftTitle">
             <h2>NFT Transfer</h2>
-            <p style="font-size: 18px;">Gasless NFT transfers enable users to send non-fungible tokens<br>
+            <p style="font-size: 18px;" id="nftP1">Gasless NFT transfers enable users to send non-fungible tokens<br>
                 (NFTs) without paying gas fees. This is particularly useful in<br>
                 gaming, digital art, and collectible markets where NFTs are prevalent.</p>
-            <p style="font-size: 18px;">Key Use Cases:<br><br>
+            <p style="font-size: 18px;" id="nftP2">Key Use Cases:<br><br>
                 1. <b>Gaming:</b><br>Players can trade, sell, or transfer<br>in-game assets without worrying about gas fees.<br><br>
                 2. <b>Digital Art and Collectibles:</b><br>Artists and collectors<br>
                 can transfer NFTs as gifts, sales, or trades without the<br>extra cost,encouraging more transactions and engagement.<br><br>
@@ -373,13 +427,13 @@
     <section id="purchase" class="section">
         <div class="purchaseTitle">
             <h2>Funding with In-App Purchases or Crypto</h2>
-            <p style="font-size: 18px;">This feature allows users to fund their accounts or wallets using<br>
+            <p style="font-size: 18px;" id="purP1">This feature allows users to fund their accounts or wallets using<br>
                 either traditional in-app purchases (likely via fiat currency) or<br>
                 cryptocurrencies. This dual approach provides flexibility and<br>
                 convenience for users.</p>
-            <p style="font-size: 18px;">Key Use Cases:<br><br>
-                1. Hybrid Funding Models:<br>Users can choose to fund their accounts with fiat<br>(via in-app purchases) or crypto, catering to a wider audience with different preferences.<br>
-                2. Onboarding Non-Crypto Users:<br>Easier for users who are not familiar with<br>crypto to get started by allowing them to fund their accounts with traditional payment methods.<br>
+            <p style="font-size: 18px;" id="purP2">Key Use Cases:<br><br>
+                1. Hybrid Funding Models:<br>Users can choose to fund their accounts with fiat<br>(via in-app purchases) or crypto, catering to a<br>wider audience with different preferences.<br>
+                2. Onboarding Non-Crypto Users:<br>Easier for users who are not familiar with<br>crypto to get started by allowing them to fund their<br>accounts with traditional payment methods.<br>
                 3. Flexibility:<br>Users can seamlessly switch between fiat and crypto funding<br>based on convenience or market conditions.<br>
                 4. Enhanced User Adoption:<br>Simplifies the process for users to participate in<br>blockchain-based applications, driving broader adoption.</p>
         </div>
