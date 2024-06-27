@@ -30,6 +30,7 @@
             display: flex;
             justify-content: center;
             padding: 0;
+            margin: 0;
         }
 
         nav ul li {
@@ -93,7 +94,7 @@
             left: 5%;
             top: -15px;
             padding: -20;
-            filter:drop-shadow(3px 3px 8px black);
+            filter: drop-shadow(3px 3px 8px black);
             transition: all ease-in-out 0.2s;
         }
         .tonLogo:hover {
@@ -304,15 +305,56 @@
 
             nav ul {
                 list-style: none;
-                display: flex;
-                justify-content: center;
+                display: none;
+                flex-direction: column;
                 padding: 0;
+                margin: 0;
+                background-color: #194471;
+                position: absolute;
+                width: 100%;
+                top: 60px;
+                left: 0;
+                z-index: 999;
             }
 
             nav ul li {
                 font-size: 12px;
-                margin: 0 5px;
-                margin-top: -1px;
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                top: 20px;
+                z-index: 1000;
+            }
+
+            .hamburger div {
+                width: 25px;
+                height: 3px;
+                background-color: #fff;
+                margin: 5px;
+                transition: all 0.3s ease;
+            }
+
+            .hamburger.active div:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active div:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            nav ul.show {
+                display: flex;
             }
 
             .gasTitle {
@@ -358,11 +400,15 @@
             }
         }
     </style>
-
 </head>
 <body>
     <header id="header">     
         <a href="#home"><img class="tonLogo" src="images/tonkeeperLOGO.png"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>        
@@ -451,6 +497,31 @@
             makes blockchain applications more accessible and attractive to a broader audience.</p>
     </footer>
 
-    <script src="index.js"></script>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('show');
+            const hamburger = document.querySelector('.hamburger');
+            hamburger.classList.toggle('active');
+        }
+
+        window.addEventListener('scroll', reveal);
+
+        function reveal() {
+            var reveals = document.querySelectorAll('.section');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('reveal');
+                } else {
+                    reveals[i].classList.remove('reveal');
+                }
+            }
+        }
+    </script>
 </body>
 </html>
